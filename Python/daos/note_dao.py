@@ -1,26 +1,66 @@
-from python.database import db
+from database import db
 import requests
 import re
+import os.path
+from pathlib import Path
+
 
 class NoteDAO:
 
-    def create_note(self, note):
-        sql = "INSERT INTO notes VALUES(%s, %s) RETURNING *"
-        cursor = db.create_connection().cursor()
-        cursor.execute(sql, (note.id, note.text))
-        returned_note = cursor.fetchone()
+    # def create_note(self, note):
+    #     sql = "INSERT INTO notes VALUES(%s, %s) RETURNING *"
+    #     cursor = db.connection.cursor()
+    #     cursor.execute(sql, (note.id, note.text))
+    #     returned_note = cursor.fetchone()
+    #
+    #     return returned_note
+    #
+    # def view_note(self, id):
+    #     sql = "SELECT * FROM notes WHERE id = %s"
+    #     cursor = db.connection.cursor()
+    #     cursor.execute(sql, [id])
+    #     returned_note = cursor.fetchone()
+    #
+    #     return returned_note
 
-        return returned_note
-
-    def view_note(self, id):
-        sql = "SELECT * FROM notes WHERE id = %s"
-        cursor = db.create_connection().cursor()
-        cursor.execute(sql, [id])
-        returned_note = cursor.fetchone()
-
-        return returned_note
-
-    def save_note(self, url, note_name, note_content):
-        open(note_name, 'wb').write(note_content)
+    @staticmethod
+    def make_note(url, note_name, note_content):
+        # Where all of my notes are being saved
+        file_path = "G:/WebServer/Python/Notes"
+        # Combines the directory and file name in order to download to save
+        # to the correct location
+        complete_file = os.path.join(file_path, note_name + ".txt")
+        # Opens the directory and file in order to edit it
+        file = open(complete_file, 'w')
+        # Writes the content to the file to save
+        file.write(note_content)
+        file.close()
 
         return note_content
+
+    @staticmethod
+    def get_all_notes():
+        txt_folder = Path("G:/WebServer/Python/Notes").rglob('*.txt')
+        files = [x for x in txt_folder]
+        print(files)
+        # for name in files:
+        #     f = open(name, 'r')
+        #     content = f.readlines()
+        #     print(f'Content of %s:\n %s' %(name, content))
+        content = {}
+        for name in files:
+            f = open(name, 'r')
+            name = name.stem
+            content[name] = f.readlines()[0]
+            f.close()
+
+        print(content)
+        return content
+
+    @staticmethod
+    def update_note(note_name, note_content):
+        txt_folder = Path("G:/WebServer/Python/Notes").rglob('*.txt')
+
+
+if __name__ == '__main__':
+    NoteDAO.get_all_notes()

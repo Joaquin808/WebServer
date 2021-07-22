@@ -1,7 +1,7 @@
 class NoteModel:
 
-    def __init__(self, id, text):
-        self.id = id
+    def __init__(self, name, text):
+        self.name = name
         self.text = text
     
     
