@@ -1,9 +1,10 @@
 from flask import Flask
 from flask_cors import CORS
-from controllers import note_controller as nc, login_controller as lc
+from controllers import note_controller as nc, login_controller as lc, home_controller as hc
 from flask import request
 
 app = Flask(__name__)
+hc.route(app)
 nc.route(app)
 lc.route(app)
 
@@ -22,3 +23,4 @@ CORS(app)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
+
