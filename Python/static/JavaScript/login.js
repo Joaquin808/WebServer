@@ -5,7 +5,7 @@ function login(){
 	xttp.onreadystatechange = function() {
 		console.log(this.readyState);
 		if (this.status == 200 && this.readyState == 4){
-			window.location.href = "/home/pi/Desktop/WebServer/WebFiles/MainPage.html";
+			window.location.href = "/home/pi/Desktop/WebServer/Python/templates/main.html";
 		}
 	}
 	
