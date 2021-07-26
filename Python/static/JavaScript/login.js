@@ -13,8 +13,8 @@ function login(){
 	xttp.open("GET", url, true);
 	xttp.setRequestHeader("Content-Type", "application/json");
 	
-	let username = document.getElementById('username').innerHTML;
-	let password = document.getElementById('password').innerHTML;
+	let username = document.getElementById('username').value;
+	let password = document.getElementById('password').value;
 	let loginObject = {"username": username, 'password': password};
-	xttp.send(loginObject);
+	xttp.send(JSON.stringify(loginObject));
 }
