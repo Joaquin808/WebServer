@@ -7,7 +7,7 @@ def route(app):
 
     @app.route("/login", methods=["GET"])
     def login():
-        start_response('201 OK', [('Content-Type', 'application/json',
+       #  start_response('201 OK', [('Content-Type', 'application/json',
         ('Access-Control-Allow-Headers','authorization'),
         ('Access-Control-Allow-Methods','HEAD, GET, POST, PUT, PATCH, DELETE'),
         ('Access-Control-Allow-Origin','*'),
