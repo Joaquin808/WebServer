@@ -5,7 +5,7 @@ from services.login_service import LoginService
 
 def route(app):
 
-    @app.route("/login", methods=["GET"])
+    @app.route("/login", methods=["POST"])
     def login():
        #  start_response('201 OK', [('Content-Type', 'application/json',
        #  ('Access-Control-Allow-Headers','authorization'),
