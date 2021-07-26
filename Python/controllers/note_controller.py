@@ -1,11 +1,13 @@
-from flask import request, jsonify
+from flask import request, jsonif
 
 from services.note_service import NoteService
 
+from logging.logger import Logger
 
 def route(app):
     @app.route("/note", methods=["POST"])
     def make_note():
+        Logger.info(request.json)
         file = NoteService.make_note(request.json["url"], request.json["noteName"], request.json["noteContent"])
         return jsonify(file), 200
 
