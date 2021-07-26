@@ -9,7 +9,7 @@ function login(){
 		}
 	}
 	
-	let url = "localhost:5000/login";
+	let url = "http://localhost:5000/login";
 	xttp.open("GET", url, true);
 	xttp.setRequestHeader("Content-Type", "application/json");
 	

@@ -22,14 +22,17 @@ class NoteDAO:
     #     returned_note = cursor.fetchone()
     #
     #     return returned_note
+    
+    # Note location for all of my notes on the raspberry pi
+    note_file_path = "/media/pi/20745293-7f22-40fb-b04f-aa8de184eb96/notes"
 
     @staticmethod
     def make_note(url, note_name, note_content):
-        # Where all of my notes are being saved
+        # Where all of my notes are being saved on my desktop computer
         file_path = "G:/WebServer/Python/Notes"
         # Combines the directory and file name in order to download to save
         # to the correct location
-        complete_file = os.path.join(file_path, note_name + ".txt")
+        complete_file = os.path.join(note_file_path, note_name + ".txt")
         # Opens the directory and file in order to edit it
         file = open(complete_file, 'w')
         # Writes the content to the file to save
@@ -40,7 +43,7 @@ class NoteDAO:
 
     @staticmethod
     def get_all_notes():
-        txt_folder = Path("G:/WebServer/Python/Notes").rglob('*.txt')
+        txt_folder = Path(note_file_path).rglob('*.txt')
         files = [x for x in txt_folder]
         print(files)
         # for name in files:
