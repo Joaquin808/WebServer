@@ -14,5 +14,5 @@ def route(app):
        #  ('Access-Control-Allow-Origin','*'),
        #  ('Access-Control-Max-Age','600'))])
         
-        Logger.info(request.json())
+       #  Logger.info(request.json())
         return jsonify(LoginService.check_login(request.json["username"], request.json["password"])), 200
