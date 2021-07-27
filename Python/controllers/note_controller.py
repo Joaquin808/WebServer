@@ -1,4 +1,4 @@
-from flask import request, jsonif
+from flask import request, jsonify
 
 from services.note_service import NoteService
 
