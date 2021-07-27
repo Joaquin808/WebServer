@@ -2,7 +2,7 @@ from flask import request, jsonify
 
 from services.login_service import LoginService
 
-from logging.logger import Logger
+from logging import Logger
 
 def route(app):
 

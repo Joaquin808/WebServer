@@ -2,7 +2,7 @@ from flask import request, jsonify
 
 from services.note_service import NoteService
 
-from logging.logger import Logger
+from logging import Logger
 
 def route(app):
     @app.route("/note", methods=["POST"])
