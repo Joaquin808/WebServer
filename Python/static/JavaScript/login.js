@@ -5,7 +5,7 @@ function login(){
 	xttp.onreadystatechange = function() {
 		console.log(this.readyState);
 		if (this.status == 200 && this.readyState == 4){
-			window.location.href = "/main.html";
+			window.location.href = "http://10.0.0.141:5000/main";
 		}
 	}
 	
