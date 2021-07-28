@@ -19,3 +19,8 @@ let url = "http://10.0.0.141:5000/notes";
 xttp.open("GET", url, true);
 
 xttp.send();
+
+document.getElementById("createButton").addEventListener("click", NewNote);
+function NewNote(){
+	window.location.href = "http://10.0.0.141:5000/newNote";
+}

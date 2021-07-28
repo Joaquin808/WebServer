@@ -9,3 +9,7 @@ def route(app):
     @app.route("/main", methods=["GET"])
     def main():
         return render_template("main.html")
+
+    @app.route("/newNote", methods=["GET"])
+    def note():
+        return render_template("new_note.html")
