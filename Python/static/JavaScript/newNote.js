@@ -19,5 +19,5 @@ function sendNote(){
 
 	let noteObject = {"url": "", "noteName": noteName, "noteContent": noteContent};
 	console.log(noteObject);
-	xttp.send(noteObject);
+	xttp.send(JSON.stringify(noteObject));
 }
