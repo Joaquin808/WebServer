@@ -10,12 +10,11 @@ function login(){
 	}
 	
 	let url = "http://10.0.0.141:5000/login";
-	xttp.open("GET", url, true);
+	xttp.open("POST", url, true);
 	xttp.setRequestHeader("Content-Type", "application/json");
 	
 	let username = document.getElementById('username').value;
 	let password = document.getElementById('password').value;
 	let loginObject = {"username": username, 'password': password};
-	console.log(loginObject);
 	xttp.send(JSON.stringify(loginObject));
 }
