@@ -4,6 +4,14 @@ xttp.onreadystatechange = function() {
 	console.log(this.readyState);
 	if (this.readyState == 4 && this.status == 200){
 		console.log(this.responseText);
+		let notes = JSON.parse(this.responseText);
+		let noteView = document.getElementById("noteView");
+		for (note in notes){
+			noteView.innerHTML += 
+			` 
+			<button viewNote(${note.note_name})> ${note.note_name} </button>
+			`;
+		}
 	}
 };
 
