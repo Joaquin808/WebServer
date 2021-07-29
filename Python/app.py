@@ -1,10 +1,10 @@
 from flask import Flask
 from flask_cors import CORS
-from controllers import note_controller as nc, login_controller as lc, home_controller as hc
+from controllers import note_controller as nc, login_controller as lc, page_controller as pc
 from flask import request
 
 app = Flask(__name__)
-hc.route(app)
+pc.route(app)
 nc.route(app)
 lc.route(app)
 
