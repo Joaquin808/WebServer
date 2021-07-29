@@ -1,5 +1,7 @@
 document.getElementById("sendNote").addEventListener("click", sendNote);
 
+// This will send the note to the storage device in the raspberry pi when the user
+// is done writing their note
 function sendNote(){	
 	let noteName = document.getElementById("noteName").value;
 	let noteContent = document.getElementById("noteContent").value;
