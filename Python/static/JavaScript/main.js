@@ -6,10 +6,11 @@ xttp.onreadystatechange = function() {
 		console.log(this.responseText);
 		let notes = JSON.parse(this.responseText);
 		let noteView = document.getElementById("noteView");
-		for (note in notes){
+		let keys = Object.keys(notes);
+		for (key in keys){
 			noteView.innerHTML += 
 			` 
-			<button viewNote(${note.note_name})> ${note.note_name} </button>
+			<button viewNote(${key})> ${key} </button>
 			`;
 		}
 	}

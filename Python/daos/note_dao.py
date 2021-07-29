@@ -60,9 +60,9 @@ class NoteDAO:
         print(content)
         return content
 
-    @staticmethod
-    def update_note(note_name, note_content):
-        txt_folder = Path("G:/WebServer/Python/Notes").rglob('*.txt')
+    @classmethod
+    def update_note(cls, note_name, note_content):
+        txt_folder = Path(cls.note_file_path).rglob('*.txt')
 
 
 if __name__ == '__main__':
