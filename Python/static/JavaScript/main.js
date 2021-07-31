@@ -7,7 +7,7 @@ xttp.onreadystatechange = function() {
 		console.log(this.responseText);
 		allNotes = JSON.parse(this.responseText);
 		let noteView = document.getElementById("noteView");
-		let keys = Object.keys(notes);
+		let keys = Object.keys(allNotes);
 		for (key in keys){
 			noteView.innerHTML += 
 			` 
