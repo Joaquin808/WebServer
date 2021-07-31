@@ -24,7 +24,8 @@ xttp.send();
 
 // This function will display all of the contents within that specified note
 function viewNote(noteName){
-	document.getElementById("noteDisplay").innerHTML = allNote[noteName];
+	console.log(noteName);
+	document.getElementById("noteDisplay").innerHTML = allNotes[noteName];
 }
 
 document.getElementById("createButton").addEventListener("click", NewNote);
