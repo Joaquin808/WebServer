@@ -26,6 +26,7 @@ xttp.send();
 function viewNote(noteName){
 	console.log(noteName);
 	document.getElementById("noteDisplay").innerHTML = allNotes[noteName];
+	document.cookie = "note=" + noteName + "; expires=" + goodExpirationDate;
 }
 
 document.getElementById("createButton").addEventListener("click", NewNote);
