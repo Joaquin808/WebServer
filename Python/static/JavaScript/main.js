@@ -9,6 +9,8 @@ xttp.onreadystatechange = function() {
 		let noteView = document.getElementById("noteView");
 		let keys = Object.keys(allNotes);
 		for (key in allNotes){
+			console.log(key);
+			console.log(allNotes[key]);
 			noteView.innerHTML += 
 			` 
 			<button onclick="viewNote(${key})"> ${key} </button>
