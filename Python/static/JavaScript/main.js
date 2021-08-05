@@ -31,7 +31,7 @@ function viewNote(noteName){
 	document.cookie = "note=" + noteName + "; expires=" + goodExpirationDate;
 }
 
-document.getElementById("createButton").addEventListener("click", NewNote);
+//document.getElementById("createButton").addEventListener("click", NewNote);
 function NewNote(){
 	window.location.href = "http://10.0.0.141:5000/newNote";
 }
