@@ -12,7 +12,7 @@ xttp.onreadystatechange = function() {
 			console.log(allNotes[key]);
 			noteView.innerHTML += 
 			` 
-			<button onclick="viewNote('${key}')"> ${key} </button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#noteModal" onclick="viewNote('${key}')"> ${key} </button>
 			`;
 			console.log(noteView.innerHTML);
 		}
@@ -27,7 +27,7 @@ xttp.send();
 // This function will display all of the contents within that specified note
 function viewNote(noteName){
 	console.log(noteName);
-	document.getElementById("noteDisplay").innerHTML = allNotes[noteName];
+	document.getElementById("noteContent").innerHTML = allNotes[noteName];
 	document.cookie = "note=" + noteName + "; expires=" + goodExpirationDate;
 }
 
