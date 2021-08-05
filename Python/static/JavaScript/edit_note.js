@@ -26,3 +26,8 @@ let url = "http://10.0.0.141:5000/notes";
 xttp.open("GET", url, true);
 
 xttp.send();
+
+document.getElementById("editNote").addEventListener("click", sendEdit);
+function sendEdit(){
+	console.log("Edit"):
+}
