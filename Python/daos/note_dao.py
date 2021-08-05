@@ -57,7 +57,7 @@ class NoteDAO:
                 name = name.stem
                 content[name] = f.readlines()[0]
                 f.close()
-            catch (Exception e):
+            except Exception as e:
                 print(e)
 
         print(content)
