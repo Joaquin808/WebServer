@@ -8,13 +8,10 @@ xttp.onreadystatechange = function() {
 		allNotes = JSON.parse(this.responseText);
 		let noteView = document.getElementById("noteView");
 		for (key in allNotes){
-			console.log(key);
-			console.log(allNotes[key]);
 			noteView.innerHTML += 
 			` 
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#noteModal" onclick="viewNote('${key}')"> ${key} </button>
 			`;
-			console.log(noteView.innerHTML);
 		}
 	}
 };
@@ -26,7 +23,6 @@ xttp.send();
 
 // This function will display all of the contents within that specified note
 function viewNote(noteName){
-	console.log(noteName);
 	document.getElementById("noteName").innerHTML = noteName;
 	document.getElementById("noteContent").value = allNotes[noteName];
 	document.cookie = "note=" + noteName + "; expires=" + goodExpirationDate;
