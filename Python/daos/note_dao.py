@@ -52,10 +52,13 @@ class NoteDAO:
         #     print(f'Content of %s:\n %s' %(name, content))
         content = {}
         for name in files:
-            f = open(name, 'r')
-            name = name.stem
-            content[name] = f.readlines()[0]
-            f.close()
+            try:
+                f = open(name, 'r')
+                name = name.stem
+                content[name] = f.readlines()[0]
+                f.close()
+            catch (Exception e):
+                print(e)
 
         print(content)
         return content
