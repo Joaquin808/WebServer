@@ -13,7 +13,7 @@ xttp.onreadystatechange = function() {
 			console.log(allNotes[key]);
 			noteView.innerHTML += 
 			` 
-			<button onclick='viewNote("${key}")'> ${key} </button>
+			<button onclick="viewNote('${key}')"> ${key} </button>
 			`;
 		}
 	}
