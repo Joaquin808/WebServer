@@ -27,6 +27,7 @@ xttp.send();
 // This function will display all of the contents within that specified note
 function viewNote(noteName){
 	console.log(noteName);
+	document.getElementById("noteName").innerHTML = noteName;
 	document.getElementById("noteContent").innerHTML = allNotes[noteName];
 	document.cookie = "note=" + noteName + "; expires=" + goodExpirationDate;
 }
