@@ -13,3 +13,7 @@ def route(app):
     @app.route("/newNote", methods=["GET"])
     def note():
         return render_template("new_note.html")
+
+    @app.route("/image", methods=["GET"])
+    def image():
+        return render_template("upload_image.html")

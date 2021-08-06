@@ -32,3 +32,8 @@ function viewNote(noteName){
 function NewNote(){
 	window.location.href = "http://10.0.0.141:5000/newNote";
 }
+
+document.getElementById("imageButton").addEventListener("click", NewImage);
+function NewImage(){
+	window.location.href = "http://10.0.0.141:5000/image";
+}
