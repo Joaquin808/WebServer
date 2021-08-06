@@ -10,3 +10,8 @@ window.addEventListener("upload", function(){
 		}
 	});
 });
+
+document.getElementById("save").addEventListener("click", SaveImage);
+function SaveImage(){
+	console.log(document.getElementById("upload").value);
+}
