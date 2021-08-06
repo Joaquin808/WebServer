@@ -24,7 +24,7 @@ class NoteDAO:
     #     return returned_note
     
     # Note location for all of my notes on the raspberry pi
-    note_file_path = "/media/pi/20745293-7f22-40fb-b04f-aa8de184eb96/notes"
+    note_file_path = "/media/pi/notes"
 
     @classmethod
     def make_note(cls, url, note_name, note_content):
